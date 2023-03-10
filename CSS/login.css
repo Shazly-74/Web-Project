@@ -4,8 +4,9 @@
 }
 body
 {
-    background: #3B0799;
-    background: linear-gradient(to right, #3B0799, #10A5CA);
+    /* background: #3B0799;
+    background: linear-gradient(to right, #3B0799, #10A5CA); */
+    background: linear-gradient(to right, black 10%,#0d3f83) ;
     /*background: url("bg.jpg");*/
     
 }
@@ -28,7 +29,7 @@ body
     background-size: cover;*/
     margin: 8em auto;
     box-shadow: 4px 4px 4px 5px rgba(255, 255, 255, 0.6);
-    filter: drop-shadow(30px 10px 4px #4444dd);
+    filter: drop-shadow(30px 10px 4px #0d3f83);
 }
 .pass_forgot
 {
