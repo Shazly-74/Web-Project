@@ -57,9 +57,9 @@ body
     color:#0d3f83
 }
 
-.fa{
-    line-height: 1px;
-    padding-left:5px;
+.fa-cart-shopping{
+    float:right;
+    font-size: 18px;
 }
 
 
@@ -78,6 +78,7 @@ body
     padding:0 15px;
     width:380px;
     height:462px;
+    box-shadow: 4px 4px 4px 5px rgba(0, 0, 0, 0.2);
 }
 
 .fa-tag
