@@ -1,3 +1,5 @@
+@import url("navbar.css");
+
 *{
     margin: 0;
     padding: 0;
@@ -14,39 +16,6 @@ body
     width: 300px;
     cursor: pointer;
     
-}
-.navbar
-{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transform: translateY(-25%);
-    position: fixed;
-    
-}
-.navbar ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 10px;
-    position: relative;
-}
-.navbar ul li a{
-    text-decoration: none;
-    color: fff;
-}
-.navbar ul li::after{
-    content: '';
-    height: 3px;
-    width: 0;
-    background: #0d3f83;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    transition: 0.5s;
-}
-.navbar ul li:hover::after{
-    width: 100%;
 }
 .content{
     width: 100%;
