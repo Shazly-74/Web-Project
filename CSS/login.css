@@ -1,14 +1,17 @@
-
-*
+@import url("navbar.css");
+/* *
 {
     font-family: 'poppins';
-}
+} */
 body
 {
     /* background: #3B0799;
-    background: linear-gradient(to right, #3B0799, #10A5CA); */
-    background: linear-gradient(to right, black 10%,#0d3f83) ;
+    background: linear-gradient(to right, #3B0799, #10A5CA); 
+    background: linear-gradient(to right, black 10%,#0d3f83) ;*/
     /*background: url("bg.jpg");*/
+
+    background: rgb(229,237,250);
+    background: linear-gradient(90deg, rgba(229,237,250,1) 30%, rgba(249,247,248,1) 55%, rgba(229,237,250,1) 85%);
     
 }
 .container
@@ -21,8 +24,8 @@ body
 
 .box_model
 {
-    border:25px solid rgba(255,255,255,0.6);
-    background-color: white; 
+    border:2px solid rgba(255,255,255,0.6);
+    background-color: #fff;
     border-radius:25px;
     width:400px;
     height: 450px;
@@ -30,7 +33,7 @@ body
     background-size: cover;*/
     margin: 8em auto;
     box-shadow: 4px 4px 4px 5px rgba(255, 255, 255, 0.6);
-    filter: drop-shadow(30px 10px 4px #0d3f83);
+    filter: drop-shadow(10px 10px 4px #0d3f83);
 }
 .pass_forgot
 {
@@ -53,8 +56,6 @@ body
     font-weight:bold;
 
 }
-
-
 
 .login-btn
 {

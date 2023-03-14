@@ -2,17 +2,8 @@
 
 *{
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
-body
-{
-    /* background: #3B0799;
-    background: linear-gradient(to right, #3B0799, #10A5CA); */
-    /*background: linear-gradient(to right, black 10%,#0d3f83) ;*/
-    /*background: url("bg.jpg");*/
-    
-}
 
 .gallery_container
 {
@@ -81,10 +72,6 @@ body
     box-shadow: 4px 4px 4px 5px rgba(0, 0, 0, 0.2);
 }
 
-.fa-tag
-{
-    line-height: 0px;
-}
 /* .show_case img
 {
     width:344px;
