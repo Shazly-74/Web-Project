@@ -18,8 +18,9 @@ body
 .container
 {
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top:25px;
+    flex-direction: row;
 
 }
 
@@ -31,12 +32,12 @@ body
     justify-content: center;
    
 
-    background:url("../Images/bga.jpg");
+    /* background:url("../Images/bga.jpg");
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size:cover; */
 
-    /* background: rgb(229,237,250);
-    background: linear-gradient(90deg, rgba(229,237,250,1) 30%, rgba(249,247,248,1) 55%, rgba(229,237,250,1) 85%); */
+    background: rgb(229,237,250);
+    background: linear-gradient(90deg, rgba(229,237,250,1) 30%, rgba(249,247,248,1) 55%, rgba(229,237,250,1) 85%);
 }
 
 .gsection
@@ -68,11 +69,11 @@ body
     font-size:20px;
     line-height: 50px;
 
-    /*width:650px;*/
-    
+    /*width:650px;
+    flex-grow: 1;*/
     height:713px;
-    flex-grow: 1;
     
+    overflow-wrap: break-word;
     
     padding-left:3em;
     padding-right:3em;
@@ -104,5 +105,5 @@ body
     margin-right:20em;
     margin-left:2em;
 
-    flex-grow: 2;
+    /* flex-grow: 2; */
 }

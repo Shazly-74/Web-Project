@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;900&family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="./Home.html"><img src="../Images/logo white.png" class="logo"></a>
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="sign-up.html">Sign up</a></li>
+            <li><a href="about-us.html">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="sign-up-box">
+            <div class="content">
+                <form method="post" action='sign-up.php'>
+                    <h2><strong>CREATE ACCOUNT</strong></h2>
+                    <input type="text" name="username" placeholder="Username" class="signup_test" required>
+                    <!--<input type="text" name="username" placeholder="Last Name" class="signup_test" required>-->
+                    <input type="email" name="email" placeholder="Your email address" class="signup_test"required>
+                    <input type="password" name="pass" placeholder="Password" class="signup_test" required>
+                    <input type="password" name="pass" placeholder="Confirm Password" class="signup_test" required>
+                    <input type="button" value="Sign-up" class="login-btn" style='width:75%; border-radius:4px;'>
+                </form>
+            </div>
+            <footer>
+                <p>Have an account already? <a href="./login.html">Login now</a></p>
+                <img src="../Images/logo.png" width="20%" style="margin:15px auto; display:block">
+            </footer>
+            
+            
+        </div>
+    </div>
+    
+</body>
+</html>

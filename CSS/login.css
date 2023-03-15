@@ -24,16 +24,16 @@ body
 
 .box_model
 {
-    border:2px solid rgba(255,255,255,0.6);
+    border:2px solid rgba(255,255,255,0.1);
     background-color: #fff;
     border-radius:25px;
-    width:400px;
-    height: 450px;
+    width:480px;
+    height: 500px;
   /*background: url("bg.jpg");
     background-size: cover;*/
     margin: 8em auto;
     box-shadow: 4px 4px 4px 5px rgba(255, 255, 255, 0.6);
-    filter: drop-shadow(10px 10px 4px #0d3f83);
+    filter: drop-shadow(5px 5px 4px #0d3f83);
 }
 .pass_forgot
 {
@@ -52,8 +52,8 @@ body
 #login-top
 {
     text-align: center;
-    font-family:'raleway', 'sans-serif', 'Times New Roman';
-    font-weight:bold;
+    font-family:'Catamaran';
+    font-weight:900;
 
 }
 
@@ -72,6 +72,7 @@ body
     box-shadow: 4px 4px 5px #888888;
     font-size: 12px;
     font-weight: 600;
+    font-family: 'Catamaran';
     text-transform: uppercase;
     margin:10px;
     color:white;
@@ -130,14 +131,23 @@ body #tops
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
+
+.container h2
+{
+    font-size:20px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 900;
+}
+
+
+/* SIGN-UP CSS */
 .sign-up-box
 {
-    border-radius:25px;
-    border:2px solid rgba(255,255,255,0.5);
+    border-radius:12px;
     background-color: white;
 
-    width:685px;
-    height:547px;;
+    width:520px;
+    height:547px;
     margin:8em auto;
 
     /*background: url("bg.jpg");
@@ -150,11 +160,22 @@ body #tops
     padding:10px;
     width:70%;
     display:block;
-    margin:25px auto;
+    margin:21px auto;
 
-    font-size: 0.9em;
+    font-size: 15px;
+    font-family:'Catamaran';
 }
+
+
+.content
+{
+    text-align: center;
+    padding: 0.5em;
+    margin:10px;
+}
+
 footer
 {
-    align-self: flex-end;
+    text-align: center;
 }
+
