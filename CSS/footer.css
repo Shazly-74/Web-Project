@@ -9,7 +9,7 @@
 
 footer
 {
-    height:500px;
+
     /*background: linear-gradient(to right, #3B0799, #17a1c4);
     background: #373B44; 
     background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
@@ -26,11 +26,6 @@ background: linear-gradient(to right, #021B79, #0575E6); */
     background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-
-
-
-    
-
 }
 
 .footer_section
@@ -40,11 +35,14 @@ background: linear-gradient(to right, #021B79, #0575E6); */
     color:#fff;
 }
 
-.logo
+.footer_logo
 {
     width: 300px;
 }
 
+footer{
+    margin-top: auto;
+}
 .footer_section p
 {
     font-size:17px;
@@ -86,3 +84,35 @@ background: linear-gradient(to right, #021B79, #0575E6); */
     font-size: 25px;
     padding-left:15px;
 }
+
+@media only screen and (max-width: 650px) {
+
+    .footer_section img
+    {
+        width:100px;
+        margin-top:1.6em;
+    }
+
+    .footer_section
+    {
+        width:120px;
+        height:440px;
+        color:#fff;
+    }
+
+    .footer_section h3
+    {
+        margin-top:2.7em;
+    }
+
+    .footer_section p
+    {
+        font-size:10px;
+    }
+
+    .footer_section p.desc
+    { 
+        line-height: 20px;
+    }
+   
+  }
