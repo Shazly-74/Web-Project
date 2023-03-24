@@ -53,17 +53,22 @@
 
 @media only screen and (max-width: 650px) {
     
-    .logo
-    {
-        width: 23%!important;
+
+    a{
+        max-width:100px;
+        width:auto;
     }
 
+    .logo
+    {
+        width:150px;
+    }
+    
     .navbar ul li{
-        display:inline-flex;
-        font-size: 10px;
+        font-size: 14px;
     }
     .navbar ul li a{
-        width:min-content;
+        width:auto;
     }
 
     /* a{
