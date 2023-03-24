@@ -67,7 +67,7 @@ body
     background: linear-gradient(90deg, rgba(230,227,227,1) 0%, rgba(13,63,131,1) 51%, rgba(13,63,131,1) 86%);
     background: #0d3f83;
     background: linear-gradient(90deg, rgba(230,227,227,1) 0%, rgba(17,106,228,1) 50%, rgba(13,63,131,1) 86%);*/
-    background: linear-gradient(90deg, rgba(17,106,228,1) 37%, rgba(13,63,131,1) 86%);
+    background: linear-gradient(90deg, rgba(17,106,228,1) 37%, rgba(13,63,131,1) 86%);  
     border:none;
     box-shadow: 4px 4px 5px #888888;
     font-size: 12px;
@@ -114,9 +114,6 @@ label{
     font-size: 14px;
 }
 
-p{
-    text-align:center;
-}
 
 div .box_model img{
     width:30%;
@@ -174,8 +171,8 @@ body #tops
     margin:10px;
 }
 
-footer
+/* footer
 {
     text-align: center;
 }
-
+ */

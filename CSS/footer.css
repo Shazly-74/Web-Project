@@ -1,0 +1,88 @@
+
+.footer_container
+{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+footer
+{
+    height:500px;
+    /*background: linear-gradient(to right, #3B0799, #17a1c4);
+    background: #373B44; 
+    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+
+    background: #667db6;
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); 
+
+    
+    background: #0575E6;
+background: -webkit-linear-gradient(to right, #021B79, #0575E6); 
+background: linear-gradient(to right, #021B79, #0575E6); */
+
+    background: #43C6AC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+    
+
+}
+
+.footer_section
+{
+    width:310px;
+    height:440px;
+    color:#fff;
+}
+
+.logo
+{
+    width: 300px;
+}
+
+.footer_section p
+{
+    font-size:17px;
+    font-family: sans-serif;
+    color:rgba(255, 255, 255, 0.9);
+}
+.footer_section p.desc
+{
+   
+    text-align: left;
+    padding-left:20px;
+    margin-top: -20px;   
+    line-height: 30px;
+}
+
+.footer_section a
+{
+    color:#fff;
+
+    text-decoration: none;
+}
+.footer_section img
+{
+    width:200px;
+    margin-top:1.6em;
+}
+
+.footer_section h3
+{
+    margin-top:4.5em
+}
+.footer_section a:hover
+{
+    text-decoration: underline;
+}
+
+.fa-brands
+{
+    font-size: 25px;
+    padding-left:15px;
+}
