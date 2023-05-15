@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="Home.html"><img src="../Images/logo white.png" class="logo"></a>
+        <a href="./Home.html"><img src="../Images/logo white.png" class="logo"></a>
         <ul>
             <li><a href="login.html">Login</a></li>
             <li><a href="sign-up.html">Sign up</a></li>

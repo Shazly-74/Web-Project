@@ -23,7 +23,7 @@ $(document).ready(function(){
     });
   });
 
-
+//console.log("Welcome to the console!");
 
 myInput.onfocus = () => document.getElementById("message").style.display = "flex";
 myInput.onblur = () => document.getElementById("message").style.display = "none";
@@ -74,15 +74,15 @@ validateform = () =>
     let num = form["phone"];
 
     if(username.value.match(checkDigits))
-        return alert("Username cannot contain digits.");
+        return false;//return alert("Username cannot contain digits.");
 
     if(num.value.length < 11 || num.value.length > 11)
-        return alert("Phone number must be 11 digits");
+        return false;//return alert("Phone number must be 11 digits");
 
     if(!(password.value.match(checkSpecial) && password.value.length >= 8 && password.value.match(checkDigits) && password.value.match(checkUpperCase) && password.value.match(checkLowerCase)))
-        return alert("Your password must contain a special character, minumum length of 8 characters, a digit, an uppercase character and a lowercase character");
+        return false //return alert("Your password must contain a special character, minumum length of 8 characters, a digit, an uppercase character and a lowercase character");
 
-    
+    return true;
 
 }
 
@@ -109,6 +109,8 @@ checkpass = () =>
     else
         passvar.classList.add("invalid"), passvar.classList.remove("valid"), passvar.innerHTML = "Password doesn't match", passvar.style.color = "red";
 }
+
+
 
 
 
