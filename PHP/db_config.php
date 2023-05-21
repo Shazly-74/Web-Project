@@ -1,6 +1,6 @@
 <?php
 
-$DB_NAME = 'variantdb';
+$DB_NAME = 'dbvariant';
 $DB_USER = 'root';
 $DB_PASSWORD = '';
 $DB_HOST = 'localhost';

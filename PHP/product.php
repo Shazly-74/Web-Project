@@ -19,19 +19,16 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;900&family=Open+Sans&display=swap" rel="stylesheet">
+        <script type="text/javascript" src ="../JS/jquery-3.6.4.min.js"></script>
+        
+
 
         <title><?php echo $row['Name']; ?></title>
     </head>  
     <body>
-        <div class="navbar">
-            <a href="../HTML/Home.html"><img src="../Images/logo white.png" class="logo"></a>
-            <ul>
-                <li><a href="/HTML/login.html">Login</a></li>
-                <li><a href="sign-up.html">Sign up</a></li>
-                <li><a href="about-us.html">About us</a></li>
-                <li><a href="#">Contact us</a></li>
-            </ul>
-        </div>
+        <?php include 'navbar.php'?>
+        
+
         <div class="container">
             <div class="show_case">
                 <img src = <?php echo $row['img_path']; ?> alt = "Oversize White Hoodie" class="itempic">
@@ -47,15 +44,15 @@
                 <p style="font-weight: 200;">EGP <?php echo $row['Price']; ?>.00</p>
                 <p class="canceled_fake_price">List Price:EGP 750.00</p>
                 <p>Select Size</p>
-                <span class="size_button"> XS </span>
-                <span class="size_button"> S </span>
-                <span class="size_button"> M </span>
-                <span class="size_button"> L </span>
-                <span class="size_button"> XL </span>
-                <span class="size_button"> XXL </span>
+                <span class="size_button" id="size1"> XS </span>
+                <span class="size_button" id="size2"> S </span>
+                <span class="size_button" id="size3"> M </span>
+                <span class="size_button" id="size4"> L </span>
+                <span class="size_button" id="size5"> XL </span>
+                <span class="size_button" id="size6"> XXL </span>
                 <p style="padding-top:10px;">Availablity: <span class="availablity">Only <?php echo $row['Stock']; ?> in stock</p>
                 <button class="addtocart"> ADD TO CART</button>
-                <i class="fa-sharp fa-regular fa-heart" style="cursor: pointer;"></i>
+                <i class="fa-sharp fa-regular fa-heart" style="cursor: pointer;" id="favheart"></i>
                 <p style="font-size: 33px;"> 
                     <i class="fa-solid fa-truck"></i> 
                     <i class="fa-sharp fa-solid fa-money-bill"></i>
@@ -89,7 +86,9 @@
                 
             </div>
         </div>
-        <footer>
+
+        <?php include 'footer.php';?>
+        <!-- <footer>
             <div class="footer_container">
                  <div class="footer_section">
                      <img src="../Images/logo white.png" class="footer_logo">
@@ -126,7 +125,10 @@
                  </div>
             </div>
             <p style="text-align: center; color:white; font-size:15px">MSA loves you.</p>
-         </footer>
+         </footer> -->
+
+        <script type=text/javascript src="../JS/pscript.js"></script>
+
         
     </body>
 </html>

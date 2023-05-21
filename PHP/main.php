@@ -10,18 +10,49 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="navbar">
-        <a href="./Home.html"><img src="../Images/logo white.png" class="logo"></a>
-        <ul>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="sign-up.html">Sign up</a></li>
-            <li><a href="about-us.html">About us</a></li>
-            <li><a href="#">Contact us</a></li>
-        </ul>
-    </div>
+    <?php include 'navbar.php'?>
+
+    <?php 
+        if(isset($_SESSION['send_welcome']) && $_SESSION['send_welcome'] == 1)
+        {
+            echo '<h1 style="text-align:center;">WELCOME BACK, ' . $_SESSION['user'] . '!</h1>';
+            $_SESSION['send_welcome'] = 0;
+        }
+    ?>
+    
     <div class="gallery_container">
-        
-        <div class="show_case"><a href="../PHP/product.php?id=1"> <img src = "../Images/model_1.jpg"></a><span><p><span><h6>Unisex</h6></span></p><p><span><h4 class="item_title">White Oversize Hoodie</h4></span></p><p><span><h3 class="price_title">500 EGP</h3></span></p><p>Out of stock<i class="fa-solid fa-cart-shopping"></i></p></span></div>
+    <?php
+        require('db_config.php');
+
+        $SQL = "SELECT * FROM items";
+        $result = mysqli_query($db, $SQL);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $id = $row['ID'];
+            $image = $row['img_path'];
+            $name = $row['Name'];
+            $price = $row['Price'];
+            $stock = $row['Stock'];
+
+            if($stock > 0)
+                $status = 'In Stock';
+            else
+                $status = 'Out of stock';
+
+            echo '<div class="show_case">';
+            echo '<a href="../PHP/product.php?id=' . $id . '"><img src="' . $image . '"></a>';
+            echo '<span>';
+            echo '<p><span><h6>Unisex</h6></span></p>';
+            echo '<p><span><h4 class="item_title">' . $name . '</h4></span></p>';
+            echo '<p><span><h3 class="price_title">' . $price . ' EGP</h3></span></p>';
+            echo '<p>' . $status . '<i class="fa-solid fa-cart-shopping"></i></p>';
+            echo '</span>';
+            echo '</div>';
+    }   
+    ?>
+    </div>
+
+        <!-- <div class="show_case"><a href="../PHP/product.php?id=1"> <img src = "../Images/model_1.jpg"></a><span><p><span><h6>Unisex</h6></span></p><p><span><h4 class="item_title">White Oversize Hoodie</h4></span></p><p><span><h3 class="price_title">500 EGP</h3></span></p><p>Out of stock<i class="fa-solid fa-cart-shopping"></i></p></span></div>
         <div class="show_case"><a href = "../PHP/product.php?id=2"><img src = "../Images/model_2.jpg"></a><span><p><span><h6>Unisex</h6></span></p><p><span><h4 class="item_title">White Oversize Hoodie</h4></span></p><p><span><h3 class="price_title">500 EGP</h3></p><p>Out of stock<i class="fa-solid fa-cart-shopping"></i></p></span></div>
         <div class="show_case"><a href = "../PHP/product.php?id=2"><img src = "../Images/model_3.jpg"></a><span><p><span><h6>Unisex</h6></span></p><p><span><h4 class="item_title">Black Oversize Hoodie</h4></span></p><p><span><h3 class="price_title">500 EGP</h3></p><p>Out of stock<i class="fa-solid fa-cart-shopping"></i></p></span></div>
         <div class="show_case"><a href = "/HTML/unisex-black/index.html"><img src = "../Images/model_4.jpg"></a><span><p><span><h6>Unisex</h6></span></p><p><span><h4 class="item_title">Black Oversize Hoodie</h4></span></p><p><span><h3 class="price_title">500 EGP</h3></p><p>Out of stock<i class="fa-solid fa-cart-shopping"></i></p></span></div>
@@ -29,9 +60,10 @@
         <div class="show_case"><a href = "/HTML/unisex-black/index.html"><img src = "../Images/model_6.jpg"></a><span><p><span><h6>Unisex</h6></span></p><p><span><h4 class="item_title">White Oversize Hoodie</h4></span></p><p><span><h3 class="price_title">500 EGP</h3></p><p>Out of stock<i class="fa-solid fa-cart-shopping"></i></p></span></div>
         <div class="show_case"><a href = "/HTML/unisex-black/index.html"><img src = "../Images/model_7.jpg"></a><span><p><span><h6>Unisex</h6></span></p><p><span><h4 class="item_title">White Oversize Hoodie</h4></span></p><p><span><h3 class="price_title">500 EGP</h3></p><p>Out of stock<i class="fa-solid fa-cart-shopping"></i></p></span></div>
         <div class="show_case"><a href = "/HTML/unisex-black/index.html"><img src = "../Images/model_8.jpg"></a><span><p><span><h6>Unisex</h6></span></p><p><span><h4 class="item_title">White Oversize Hoodie</h4></span></p><p><span><h3 class="price_title">500 EGP</h3></p><p>Out of stock<i class="fa-solid fa-cart-shopping"></i></p></span></div>
-    </div>
+    </div> -->
     
-    <footer>
+    <?php include 'footer.php';?>
+    <!-- <footer>
         <div class="footer_container">
              <div class="footer_section">
                  <img src="../Images/logo white.png" class="footer_logo">
@@ -68,6 +100,6 @@
              </div>
         </div>
         <p style="text-align: center; color:white; font-size:15px">MSA loves you.</p>
-     </footer>
+     </footer> -->
 </body>
 </html>

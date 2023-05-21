@@ -65,6 +65,7 @@
     width:100px;
     height: 100px;
     cursor: pointer;
+    position: relative;
 }
 
 .canceled_fake_price
@@ -81,6 +82,13 @@
     margin:5px;
     cursor: pointer;
 }
+
+.size_button:hover
+{
+    background-color: #0d3F83;
+    color: #fff;
+}
+
 
 .availablity
 {
@@ -101,6 +109,16 @@
     cursor: pointer;
 }
 
+.addtocart:hover
+{
+    /*background-image: linear-gradient(to right top, #042450, #042450, #8693cf, #b5bde4, #e5e8f8);
+    background-color:#042450;*/
+    background: linear-gradient(90deg, rgba(13,63,131,1) 37%, rgba(17,106,228,1) 86%);
+    cursor: pointer;
+    transform:scale(1.02);
+
+}
+
 .details
 {
     padding-top: 15px;
@@ -113,3 +131,13 @@
     font-size: 30px; font-weight: 700;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.show_case img:hover
+{
+    transform: scale(1.1);
+}
+
+/* .stars img:hover
+{
+    transform: scale(4.5);
+} */

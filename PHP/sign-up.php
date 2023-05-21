@@ -14,19 +14,20 @@
 </head>
 <body>
 
-    <div class="navbar">
-        <a href="./Home.html"><img src="../Images/logo white.png" class="logo"></a>
-        <ul>
-            <li><a href="../HTML/login.html">Login</a></li>
-            <li><a href="sign-up.html">Sign up</a></li>
-            <li><a href="../HTML/about-us.html">About us</a></li>
-            <li><a href="#">Contact us</a></li>
-        </ul>
-    </div>
+    <?php include 'navbar.php'?>
 
+
+    <?php 
+        if(isset($_SESSION['is_logged']) && $_SESSION['is_logged'] == 1)
+        {
+            header("Location: ../PHP/login.php");
+            exit;
+        }  
+    ?>
     <div class="container">
         <div class="sign-up-box">
             <div class="content">
+                <p class="invalid" id="exists" style="display:none;"></p>
                 <form name="signupform" method="post" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' onsubmit="validateform()">
                     <h2><strong>CREATE ACCOUNT</strong></h2>
                     <input type="text"  name="username" placeholder="Username" class="signup_test" required>
@@ -38,10 +39,8 @@
                     <input type="submit"   id="signupbtn" name="sign-up" value="Sign-up" class="login-btn" style='width:75%; border-radius:4px;'>
                 </form>
             </div>
-                <p style="text-align: center;">Have an account already? <a href="./login.html">Login now</a></p>
-                <img src="../Images/logo.png" width="20%" style="margin:15px auto; display:block">
-                <p id="exists"></p>
-            
+                <p style="text-align: center;">Have an account already? <a href="../PHP/login.php">Login now</a></p>
+                <img src="../Images/logo.png" width="20%" style="margin:15px auto; display:block">            
             
         </div>
 
@@ -58,55 +57,9 @@
 
     
 
-
-    <footer>
-        <div class="footer_container">
-             <div class="footer_section">
-                 <img src="../Images/logo white.png" class="footer_logo">
-                 <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>Obcaecati sit fuga quam eaque minus aperiam suscipit id <br>magni at odio saepe officiis, nesciunt, cum nobis dolor<br> iusto nisi aliquam aliquid!</p>
-                 <a href = "facebook.com"><i class="fa-brands fa-facebook"></i></a>
-                 <a href = "facebook.com"><i class="fa-brands fa-instagram"></i></a>
-                 <a href = "facebook.com"><i class="fa-brands fa-twitter"></i></a>
-                 <a href = "facebook.com"><i class="fa-brands fa-snapchat"></i></a>
- 
-             </div>
-             <div class="footer_section">
-                 <h3>Help</h3>
-                 <a href="#"><p>FAQ</p></a>
-                 <a href="#"><p>Return Policy</p></a>
-                 <a href="#"><p>Track Order</p></a>
-                 <a href="#"><p>Payement Options</p></a>
- 
-             </div>
- 
-             <div class="footer_section">
-                 <h3>Quick Links</h3>
-                 <a href="Home.html"><p>Home</p></a>
-                 <a href="login.html"><p>Login</p></a>
-                 <a href="sign-up.html"><p>Sign up</p></a>
-                 <a href="about-us.html"><p>About us</p></a>
-                 <a href="#"><p>Contact</p></a>
-             </div>
- 
-             <div class="footer_section">
-                 <h3>Address</h3>
-                 <p>6 of october Al Motmayez,
-                 <br>Giza Governorate 
-                 <br>Egypt</p>
-             </div>
-        </div>
-        <p style="text-align: center; color:white; font-size:15px">MSA loves you.</p>
-     </footer>
+    <?php include 'footer.php';?>
 
      <script type=text/javascript src="../JS/validation.js"></script>
-     <script>
-        function sendexists()
-        {
-            let x = document.getElementById("exists");
-            x.innerHTML.value = "Username already exists";
-        }
-
-     </script>
     
 </body>
 </html>
@@ -115,20 +68,7 @@
 <?php
 
     require('db_config.php');
-
-
-    function isUserExists($db, $uemail)
-    {
-        //$SQL = "SELECT Email FROM Account WHERE Email = '$uemail'";
-
-        $SQL = "SELECT * FROM Account WHERE Email = '$uemail'";
-        
-        $results =  mysqli_query($db, $SQL);
-
-        $row = $results->fetch_assoc(); // we fetch results as associative array
-
-        return (is_array($row) && count($row)>0); // we check if it's array and count is more than 0 so this means that a user email already exists
-    }
+    require('functions.php');
     
     if($_POST)
     {
@@ -142,22 +82,31 @@
             
             if(isUserExists($db, $email))
             {
-                echo '<script> sendexists(); </script>';
-                //echo "<p>This email address is associated with another account please use another email address or login to your account</p>";
-                //echo "<script>alert('Email already exists')</script>";
+                echo '<script>
+                document.getElementById("exists").style.display = "inline-block";
+
+                document.getElementById("exists").innerHTML = " This email address is associated with another account"; </script>';
                 //header('Location: login.php');
                 exit;
             }
-            
-            $_user = mysqli_real_escape_string($db, $user);
-            $_email = mysqli_real_escape_string($db, $email);
-            $_no = mysqli_real_escape_string($db, $no);
-            $_pass = mysqli_real_escape_string($db, $pass);
+            else
+            {
+                $_user = mysqli_real_escape_string($db, $user);
+                $_email = mysqli_real_escape_string($db, $email);
+                $_no = mysqli_real_escape_string($db, $no);
+                $_pass = mysqli_real_escape_string($db, $pass);
+    
+                $SQL = "INSERT INTO Account VALUES('$_user', '$_pass', '$_no', '$_email')";
+                mysqli_query($db, $SQL);
+                
+                $_SESSION['user'] = $user;
+                $_SESSION['is_logged'] = 1;
+                $_SESSION['send_welcome'] = 1;
 
-            $SQL = "INSERT INTO Account VALUES('$_user', '$_pass', '$_no', '$_email')";
-            mysqli_query($db, $SQL);
-
-            header('Location: login.html');
+                echo '<script>location.href ="main.php"</script>';
+                
+                //header('Location: login.php');
+            }
         }
     }
     

@@ -193,6 +193,10 @@ body #tops
     font-size: 15px;
   }
   
+  #wrong
+  {
+    text-align:center;
+  }
   /* Add a green text color and a checkmark when the requirements are right */
   .valid {
     
